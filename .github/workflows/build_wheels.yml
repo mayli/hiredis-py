@@ -3,7 +3,7 @@ name: Build
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  CIBW_BEFORE_ALL_LINUX: apt install libhiredis-dev
+  CIBW_BEFORE_ALL_LINUX: apt-get -y install libhiredis-dev
 
 jobs:
   build_wheels:
