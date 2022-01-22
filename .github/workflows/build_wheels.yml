@@ -23,3 +23,10 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           path: ./wheelhouse/*.whl
+      - name: Upload to PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          # password: ${{ secrets.PYPI_TOKEN }}
+          password: ${{ secrets.TEST_PYPI_TOKEN }}
+          repository_url: https://test.pypi.org/legacy/
